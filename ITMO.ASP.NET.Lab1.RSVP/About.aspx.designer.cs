@@ -11,7 +11,7 @@ namespace ITMO.ASP.NET.Lab1.RSVP
 {
 
 
-    public partial class Summary
+    public partial class About
     {
     }
 }
