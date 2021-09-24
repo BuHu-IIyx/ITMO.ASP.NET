@@ -12,7 +12,10 @@ namespace ITMO.ASP.NET.Lab1.RSVP
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack) 
-            { 
+            {
+                Page.Validate(); 
+                if (!Page.IsValid) 
+                    return;
                 GuestResponse rsvp = new GuestResponse(name.Text, email.Text, phone.Text, CheckBoxYN.Checked);
                 ResponseRepository.GetRepository().AddResponse(rsvp);
                 if (rsvp.WillAttend.HasValue && rsvp.WillAttend.Value) 
